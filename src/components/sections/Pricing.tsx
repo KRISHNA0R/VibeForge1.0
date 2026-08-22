@@ -82,7 +82,7 @@ export function Pricing() {
             </span>
             <button
               onClick={() => setIsInternational(!isInternational)}
-              className="relative h-7 w-12 rounded-full border border-white/15 bg-white/[0.05] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.1] focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="relative h-6 w-10 md:h-7 md:w-12 rounded-full border border-white/15 bg-white/[0.05] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.1] focus:outline-none focus:ring-2 focus:ring-accent/30"
             >
               <motion.div
                 className="absolute top-0.5 h-6 w-6 rounded-full bg-accent shadow-[0_0_12px_rgba(212,162,47,0.6)]"

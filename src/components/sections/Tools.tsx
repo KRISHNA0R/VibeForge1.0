@@ -154,7 +154,7 @@ export function Tools() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-8 rounded-xl border border-white/8 bg-white/[0.03] px-8 py-5 backdrop-blur-md"
+          className="grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-6 md:gap-8 rounded-xl border border-white/8 bg-white/[0.03] px-6 py-5 md:px-8 backdrop-blur-md"
         >
           {[
             { label: "Tools Taught", value: "20+" },

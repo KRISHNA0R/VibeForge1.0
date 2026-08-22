@@ -19,7 +19,7 @@ function GalleryCard({ item }: { item: (typeof achievements)[0] }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(212,162,47,0.4)" }}
-      className="group relative shrink-0 w-[320px] h-[220px] overflow-hidden rounded-2xl border border-white/8 bg-card-bg backdrop-blur-xl transition-all duration-300 hover:border-accent/30"
+      className="group relative shrink-0 w-[260px] h-[180px] md:w-[320px] md:h-[220px] overflow-hidden rounded-2xl border border-white/8 bg-card-bg backdrop-blur-xl transition-all duration-300 hover:border-accent/30"
     >
       <img
         src={`https://placehold.co/600x400/0a0a0b/d4a22f?text=${encodeURIComponent(item.label)}`}
@@ -27,7 +27,7 @@ function GalleryCard({ item }: { item: (typeof achievements)[0] }) {
         className="h-full w-full object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-80"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 p-6">
+      <div className="absolute bottom-0 left-0 p-4 md:p-6">
         <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">
           {item.subtitle}
         </p>
@@ -60,7 +60,7 @@ export function Gallery() {
           className="flex flex-col gap-6"
         >
           <EyebrowBadge>DEVINI // HALL OF ACHIEVEMENTS</EyebrowBadge>
-          <h2 className="max-w-[24ch] font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
+          <h2 className="max-w-[24ch] font-sans text-3xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
             Built to <span className="text-accent">celebrate.</span>
           </h2>
           <p className="max-w-[48ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">

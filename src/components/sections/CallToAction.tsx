@@ -14,7 +14,7 @@ export function CallToAction() {
             <EyebrowBadge>DEVINI // READY?</EyebrowBadge>
           </AnimatedItem>
           <AnimatedItem>
-            <h2 className="max-w-[28ch] font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
+            <h2 className="max-w-[28ch] font-sans text-3xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
               Stop watching tutorials.{" "}
               <span className="text-accent">Start shipping.</span>
             </h2>

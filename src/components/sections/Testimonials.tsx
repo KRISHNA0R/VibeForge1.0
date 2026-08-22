@@ -107,7 +107,7 @@ function FameCard({ student, index }: { student: typeof hallOfFame[0]; index: nu
       whileHover={{ scale: 1.05, boxShadow: "0 0 50px rgba(212,162,47,0.3)" }}
       className="group card-surface relative overflow-hidden border border-white/8 transition-all duration-300 hover:border-accent/30"
     >
-      <div className="relative h-[280px] overflow-hidden">
+      <div className="relative h-[200px] md:h-[280px] overflow-hidden">
         <img
           src={student.photo}
           alt={student.name}

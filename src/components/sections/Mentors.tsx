@@ -58,7 +58,7 @@ function MentorCard({ mentor, index }: { mentor: typeof mentors[0]; index: numbe
       whileHover={{ boxShadow: "0 0 50px rgba(212,162,47,0.2)" }}
       className="group card-surface flex flex-col overflow-hidden border border-white/8 transition-all duration-300 hover:border-accent/30 md:flex-row"
     >
-      <div className="relative h-[300px] w-full shrink-0 overflow-hidden md:h-[400px] md:w-[350px]">
+      <div className="relative h-[250px] w-full shrink-0 overflow-hidden md:h-[400px] md:w-[350px]">
         <img
           src={mentor.photo}
           alt={mentor.name}
@@ -69,7 +69,7 @@ function MentorCard({ mentor, index }: { mentor: typeof mentors[0]; index: numbe
           style={{ boxShadow: "inset 0 0 60px rgba(212,162,47,0.1)" }} />
       </div>
 
-      <div className="flex flex-1 flex-col gap-6 p-8">
+      <div className="flex flex-1 flex-col gap-6 p-5 md:p-8">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">
             {mentor.title}
