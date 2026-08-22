@@ -48,6 +48,24 @@ export function Navbar() {
             Tools
           </a>
           <a
+            href="/gallery"
+            className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"
+          >
+            Gallery
+          </a>
+          <a
+            href="/mentors"
+            className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"
+          >
+            Mentors
+          </a>
+          <a
+            href="/testimonials"
+            className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"
+          >
+            Testimonials
+          </a>
+          <a
             href="/pricing"
             className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"
           >
