@@ -11,7 +11,7 @@ type Props = {
 
 export function PlanCard({ name, price, period, description, features, popular }: Props) {
   return (
-    <div className={`card-surface flex flex-col gap-6 p-8 ${popular ? "ring-1 ring-accent/30" : ""}`}>
+    <div className={`card-surface flex h-full flex-col gap-6 p-8 ${popular ? "ring-1 ring-accent/30" : ""}`}>
       {popular && (
         <span className="self-start rounded-full bg-accent/15 px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-accent">
           Most Popular
