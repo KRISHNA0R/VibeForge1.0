@@ -1,67 +1,173 @@
 "use client";
 
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
-import { SkillBadge } from "@/components/ui/SkillBadge";
-import { AnimatedItem, AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const toolGroups = [
   {
     category: "AI Models",
-    tools: ["ChatGPT", "Claude", "Gemini", "Copilot", "Cursor"],
+    icon: "🤖",
+    tools: [
+      { name: "ChatGPT", tier: "Pro" },
+      { name: "Claude", tier: "Pro" },
+      { name: "Gemini", tier: "Advanced" },
+      { name: "Copilot", tier: "Enterprise" },
+      { name: "Cursor", tier: "Pro" },
+    ],
   },
   {
     category: "Frontend",
-    tools: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+    icon: "🎨",
+    tools: [
+      { name: "React", tier: "19" },
+      { name: "Next.js", tier: "16" },
+      { name: "Tailwind CSS", tier: "4" },
+      { name: "TypeScript", tier: "5" },
+      { name: "Framer Motion", tier: "12" },
+    ],
   },
   {
     category: "Backend",
-    tools: ["Node.js", "Python", "PostgreSQL", "Prisma", "tRPC"],
+    icon: "⚙️",
+    tools: [
+      { name: "Node.js", tier: "22" },
+      { name: "Python", tier: "3.12" },
+      { name: "PostgreSQL", tier: "16" },
+      { name: "Prisma", tier: "6" },
+      { name: "tRPC", tier: "11" },
+    ],
   },
   {
     category: "DevOps",
-    tools: ["Vercel", "Docker", "GitHub Actions", "AWS", "Supabase"],
+    icon: "🚀",
+    tools: [
+      { name: "Vercel", tier: "Pro" },
+      { name: "Docker", tier: "24" },
+      { name: "GitHub Actions", tier: "CI/CD" },
+      { name: "AWS", tier: "Cloud" },
+      { name: "Supabase", tier: "Pro" },
+    ],
   },
 ];
 
+function ToolBadge({ name, tier, index }: { name: string; tier: string; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.05 }}
+      whileHover={{ scale: 1.08, boxShadow: "0 0 25px rgba(212,162,47,0.35)" }}
+      className="group relative cursor-default"
+    >
+      <div className="flex items-center gap-3 rounded-xl border border-white/8 bg-gradient-to-br from-white/[0.06] to-white/[0.02] px-5 py-3.5 backdrop-blur-md transition-all duration-300 hover:border-accent/30 hover:from-accent/[0.08] hover:to-accent/[0.02]">
+        <div className="flex flex-col">
+          <span className="font-sans text-sm font-medium text-foreground">
+            {name}
+          </span>
+          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+            v{tier}
+          </span>
+        </div>
+        <div className="ml-auto h-1.5 w-1.5 rounded-full bg-accent/40 shadow-[0_0_8px_rgba(212,162,47,0.5)] transition-all duration-300 group-hover:bg-accent group-hover:shadow-[0_0_12px_rgba(212,162,47,0.9)]" />
+      </div>
+    </motion.div>
+  );
+}
+
+function ToolGroup({ group, index }: { group: typeof toolGroups[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ type: "spring", stiffness: 80, damping: 20, delay: index * 0.1 }}
+      className="group relative overflow-hidden rounded-2xl border border-white/8 bg-gradient-to-br from-white/[0.04] to-transparent p-6 md:p-8 transition-all duration-300 hover:border-accent/20"
+    >
+      {/* Background glow */}
+      <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-accent/5 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+      <div className="relative flex flex-col gap-5">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl">{group.icon}</span>
+          <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] text-accent">
+            {group.category}
+          </h3>
+        </div>
+        <div className="flex flex-wrap gap-2.5">
+          {group.tools.map((tool, i) => (
+            <ToolBadge key={tool.name} name={tool.name} tier={tool.tier} index={i} />
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function Tools() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <section id="tools"
-      className="relative border-t border-white/5 bg-background px-6 pb-28 pt-24 md:px-10 md:pb-40 md:pt-32">
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-16">
-        <AnimatedSection className="flex flex-col gap-6">
-          <AnimatedItem>
-            <EyebrowBadge>DEVINI // TOOL STACK</EyebrowBadge>
-          </AnimatedItem>
-          <AnimatedItem>
-            <h2 className="max-w-[20ch] font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
-              Every tool you need.{" "}
-              <span className="text-accent">One stack.</span>
-            </h2>
-          </AnimatedItem>
-          <AnimatedItem>
-            <p className="max-w-[48ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
-              We teach the exact tools used by top indie hackers and production teams.
-              No bloat — only what ships.
-            </p>
-          </AnimatedItem>
-        </AnimatedSection>
+      className="relative border-t border-white/5 bg-background px-6 pb-28 pt-24 md:px-10 md:pb-40 md:pt-32 overflow-hidden">
+      {/* Background grid pattern */}
+      <div className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
 
-        <AnimatedSection className="grid gap-12 md:grid-cols-2">
-          {toolGroups.map((group) => (
-            <AnimatedItem key={group.category}>
-              <div className="flex flex-col gap-4">
-                <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] text-accent">
-                  {group.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.tools.map((tool) => (
-                    <SkillBadge key={tool} name={tool} />
-                  ))}
-                </div>
-              </div>
-            </AnimatedItem>
+      <div className="relative mx-auto flex max-w-[1400px] flex-col gap-16">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 28 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          className="flex flex-col gap-6"
+        >
+          <EyebrowBadge>DEVINI // TOOL STACK</EyebrowBadge>
+          <h2 className="max-w-[20ch] font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
+            Every tool you need.{" "}
+            <span className="text-accent">One stack.</span>
+          </h2>
+          <p className="max-w-[48ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
+            We teach the exact tools used by top indie hackers and production teams.
+            No bloat — only what ships.
+          </p>
+        </motion.div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {toolGroups.map((group, i) => (
+            <ToolGroup key={group.category} group={group} index={i} />
           ))}
-        </AnimatedSection>
+        </div>
+
+        {/* Bottom stat bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-8 rounded-xl border border-white/8 bg-white/[0.03] px-8 py-5 backdrop-blur-md"
+        >
+          {[
+            { label: "Tools Taught", value: "20+" },
+            { label: "Avg. Course Rating", value: "4.8★" },
+            { label: "Students Trained", value: "500+" },
+            { label: "Ship Rate", value: "94%" },
+          ].map((stat) => (
+            <div key={stat.label} className="flex flex-col items-center gap-1">
+              <span className="font-sans text-2xl font-bold text-foreground">{stat.value}</span>
+              <span className="font-mono text-[9px] uppercase tracking-[0.24em] text-zinc-500">{stat.label}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
