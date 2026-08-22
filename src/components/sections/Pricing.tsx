@@ -1,3 +1,5 @@
+"use client";
+
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 import { PlanCard } from "@/components/ui/PlanCard";
 import { AnimatedItem, AnimatedSection } from "@/components/ui/AnimatedSection";
