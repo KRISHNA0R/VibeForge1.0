@@ -230,29 +230,29 @@ export function CinematicReveal() {
               className="font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl lg:text-7xl"
               style={{ transition: "opacity 240ms ease-out" }}
             >
-              I am
+              Vibe
               <br />
-              <span className="text-accent">Inevitable.</span>
+              <span className="text-accent">Code.</span>
             </h2>
             <h2
               ref={h2IronManRef}
               className="absolute inset-0 font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl lg:text-7xl"
               style={{ opacity: 0, transition: "opacity 240ms ease-out" }}
             >
-              And I am
+              Ship
               <br />
-              <span className="text-accent">Iron Man.</span>
+              <span className="text-accent">Products.</span>
             </h2>
           </div>
           <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-zinc-400 md:text-base">
-            Endgame &mdash; the snap heard across the universe. J.A.R.V.I.S. held the last frame so we could rebuild from it.
+            From zero to production. Devini held the frame so you could build from it &mdash; one vibe at a time.
           </p>
         </div>
 
         <div className="pointer-events-none absolute left-6 top-20 z-10 flex items-center gap-2 md:left-10 md:top-24">
           <div className="h-px w-8 bg-accent/60" />
           <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-400">
-            Flight Log &mdash; Archived
+            Build Log &mdash; Active
           </span>
         </div>
 
@@ -278,8 +278,8 @@ export function CinematicReveal() {
             />
           </div>
           <div className="mx-6 flex items-center justify-between pb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-zinc-500 md:mx-10">
-            <span>MARK III // ARCHIVE</span>
-            <span>J.A.R.V.I.S. // PLAYBACK</span>
+            <span>DEVINI // LIVE</span>
+            <span>AI ENGINE // ONLINE</span>
             <span>Scroll &darr;</span>
           </div>
         </div>
@@ -352,13 +352,13 @@ export function CinematicReveal() {
           style={{ opacity: 0, transition: "opacity 80ms linear" }}
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
-            Next &mdash; engage
+            Ready to ship?
           </span>
           <a
             href="#systems"
             className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-foreground backdrop-blur-md transition-all duration-200 hover:bg-white/[0.12] active:translate-y-[1px]"
           >
-            Open diagnostics
+            View plans
             <span aria-hidden>&darr;</span>
           </a>
         </div>
