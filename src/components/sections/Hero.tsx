@@ -219,15 +219,15 @@ export function Hero() {
           className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start gap-5 px-6 pb-24 md:px-12 md:pb-28"
           style={{ transition: "opacity 80ms linear" }}
         >
-          <EyebrowBadge>MARK LXXXV // STARK INDUSTRIES // ONLINE</EyebrowBadge>
+          <EyebrowBadge>DEVINI // VIBE CODING ACADEMY // ONLINE</EyebrowBadge>
           <h1 className="max-w-[14ch] font-sans text-5xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-7xl lg:text-8xl">
-            I am
+            Build with
             <br />
-            <span className="text-accent">Iron Man.</span>
+            <span className="text-accent">Devini.</span>
           </h1>
           <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-zinc-400 md:text-base">
-            Mark LXXXV nanotech suit. Arc reactor calibrated. Scroll to run a full
-            system diagnostic — J.A.R.V.I.S. is holding on the line.
+            Master vibe coding. AI-assisted development, prompt engineering, and
+            full-stack building — ship production-ready apps in record time.
           </p>
         </div>
 
@@ -238,22 +238,22 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
             <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(212,162,47,0.85)]" />
-            Protocol &mdash; Mk LXXXV
+            Protocol &mdash; Devini Stack
           </span>
           <h2 className="font-sans font-semibold leading-[0.88] tracking-tighter text-foreground text-[clamp(4rem,9.5vw,9rem)]">
-            Build
+            Ship
             <br />
-            with <span className="text-accent">Devini</span>
+            <span className="text-accent">Faster.</span>
           </h2>
           <p className="max-w-[36ch] font-mono text-[11px] uppercase tracking-[0.22em] text-zinc-400">
-            Interfaces &amp; products, engineered like the Mark LXXXV.
+            Full-stack apps, AI workflows, and production systems — engineered to ship.
           </p>
         </div>
 
         <div className="pointer-events-none absolute left-6 top-20 z-10 flex items-center gap-2 md:left-10 md:top-24">
           <div className="h-px w-8 bg-accent/60" />
           <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-zinc-400">
-            Telemetry Link &mdash; Live
+            Dev Output &mdash; Live
           </span>
         </div>
 
