@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 import { PlanCard } from "@/components/ui/PlanCard";
 
@@ -97,28 +97,26 @@ export function Pricing() {
         </motion.div>
 
         <div className="grid gap-6 md:grid-cols-3" style={{ alignItems: "stretch" }}>
-          <AnimatePresence mode="wait">
-            {plans.map((plan, i) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 80, damping: 20, delay: i * 0.1 }}
-                whileHover={{ scale: 1.03, boxShadow: "0 0 50px rgba(212,162,47,0.25)" }}
-                className="h-full"
-              >
-                <PlanCard
-                  name={plan.name}
-                  price={isInternational ? plan.priceUSD : plan.priceINR}
-                  period={plan.period}
-                  description={plan.description}
-                  features={plan.features}
-                  popular={plan.popular}
-                />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {plans.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 80, damping: 20, delay: i * 0.1 }}
+              whileHover={{ scale: 1.03, boxShadow: "0 0 50px rgba(212,162,47,0.25)" }}
+              className="h-full"
+            >
+              <PlanCard
+                name={plan.name}
+                price={isInternational ? plan.priceUSD : plan.priceINR}
+                period={plan.period}
+                description={plan.description}
+                features={plan.features}
+                popular={plan.popular}
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
