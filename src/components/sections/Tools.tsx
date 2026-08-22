@@ -7,7 +7,6 @@ import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 const toolGroups = [
   {
     category: "AI Models",
-    icon: "🤖",
     tools: [
       { name: "ChatGPT", tier: "Pro" },
       { name: "Claude", tier: "Pro" },
@@ -18,7 +17,6 @@ const toolGroups = [
   },
   {
     category: "Frontend",
-    icon: "🎨",
     tools: [
       { name: "React", tier: "19" },
       { name: "Next.js", tier: "16" },
@@ -29,7 +27,6 @@ const toolGroups = [
   },
   {
     category: "Backend",
-    icon: "⚙️",
     tools: [
       { name: "Node.js", tier: "22" },
       { name: "Python", tier: "3.12" },
@@ -40,7 +37,6 @@ const toolGroups = [
   },
   {
     category: "DevOps",
-    icon: "🚀",
     tools: [
       { name: "Vercel", tier: "Pro" },
       { name: "Docker", tier: "24" },
@@ -93,7 +89,6 @@ function ToolGroup({ group, index }: { group: typeof toolGroups[0]; index: numbe
 
       <div className="relative flex flex-col gap-5">
         <div className="flex items-center gap-3">
-          <span className="text-2xl">{group.icon}</span>
           <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.28em] text-accent">
             {group.category}
           </h3>
@@ -158,7 +153,7 @@ export function Tools() {
         >
           {[
             { label: "Tools Taught", value: "20+" },
-            { label: "Avg. Course Rating", value: "4.8★" },
+            { label: "Avg. Course Rating", value: "4.8/5" },
             { label: "Students Trained", value: "500+" },
             { label: "Ship Rate", value: "94%" },
           ].map((stat) => (
