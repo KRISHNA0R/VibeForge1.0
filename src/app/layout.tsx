@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Stark Industries — Mark LXXXV",
+  title: "Devini — Vibe Code Your Way to Production",
   description:
-    "Arc reactor online. J.A.R.V.I.S. standing by. Scroll to engage the Mark LXXXV.",
+    "Master vibe coding. AI-assisted development, prompt engineering, and full-stack building — ship faster with modern tools.",
   metadataBase: new URL("http://localhost:3000"),
 };
 
