@@ -18,7 +18,7 @@ export function SystemsNominal() {
       <div className="mx-auto flex max-w-[1400px] flex-col gap-16 md:grid md:grid-cols-[5fr_4fr] md:gap-20">
         <AnimatedSection className="flex flex-col gap-8">
           <AnimatedItem>
-            <EyebrowBadge>DEVINI // SKILL MATRIX</EyebrowBadge>
+            <EyebrowBadge>VIBEFORGE // SKILL MATRIX</EyebrowBadge>
           </AnimatedItem>
           <AnimatedItem>
             <h2 className="max-w-[16ch] font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
@@ -28,7 +28,7 @@ export function SystemsNominal() {
           </AnimatedItem>
           <AnimatedItem>
             <p className="max-w-[48ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
-              Every skill below is what Devini logged from real production builds.
+              Every skill below is what VibeForge logged from real production builds.
               No theory — only patterns that ship. Master the stack, ship faster,
               build with confidence.
             </p>

@@ -24,7 +24,7 @@ const plans = [
     priceINR: "₹1,499",
     priceUSD: "$29",
     period: "/month",
-    description: "Full access to the Devini method and all tools.",
+    description: "Full access to the VibeForge method and all tools.",
     features: [
       "All courses (20+)",
       "AI-assisted coding deep dives",
@@ -66,7 +66,7 @@ export function Pricing() {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="flex flex-col items-center gap-6 text-center"
         >
-          <EyebrowBadge>DEVINI // PLANS</EyebrowBadge>
+          <EyebrowBadge>VIBEFORGE // PLANS</EyebrowBadge>
           <h2 className="max-w-[24ch] font-sans text-4xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
             Pick your{" "}
             <span className="text-accent">build speed.</span>

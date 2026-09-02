@@ -51,7 +51,7 @@ export function Navbar() {
             aria-hidden
             className="inline-block h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(212,162,47,0.9)]"
           />
-          Devini
+          VibeForge
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

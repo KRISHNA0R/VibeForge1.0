@@ -92,6 +92,24 @@ export function Hero() {
     ctx.drawImage(img, drawX, drawY, drawW, drawH);
   }, []);
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+    };
+    const handleContextRestored = () => {
+      const idx = lastFrameRef.current >= 0 ? lastFrameRef.current : 0;
+      drawFrame(idx);
+    };
+    canvas.addEventListener("contextlost", handleContextLost);
+    canvas.addEventListener("contextrestored", handleContextRestored);
+    return () => {
+      canvas.removeEventListener("contextlost", handleContextLost);
+      canvas.removeEventListener("contextrestored", handleContextRestored);
+    };
+  }, [drawFrame]);
+
   const resizeCanvas = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -219,11 +237,11 @@ export function Hero() {
           className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start gap-5 px-6 pb-24 md:px-12 md:pb-28"
           style={{ transition: "opacity 80ms linear" }}
         >
-          <EyebrowBadge>DEVINI // VIBE CODING ACADEMY // ONLINE</EyebrowBadge>
+          <EyebrowBadge>VIBEFORGE // VIBE CODING ACADEMY // ONLINE</EyebrowBadge>
           <h1 className="max-w-[14ch] font-sans text-5xl font-semibold leading-[0.95] tracking-tighter text-foreground md:text-7xl lg:text-8xl">
             Build with
             <br />
-            <span className="text-accent">Devini.</span>
+            <span className="text-accent">VibeForge.</span>
           </h1>
           <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-zinc-400 md:text-base">
             Master vibe coding. AI-assisted development, prompt engineering, and
@@ -238,7 +256,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
             <span aria-hidden className="inline-block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_rgba(212,162,47,0.85)]" />
-            Protocol &mdash; Devini Stack
+            Protocol &mdash; VibeForge Stack
           </span>
           <h2 className="font-sans font-semibold leading-[0.88] tracking-tighter text-foreground text-[clamp(4rem,9.5vw,9rem)]">
             Ship

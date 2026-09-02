@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devini — Vibe Code Your Way to Production",
+  title: "VibeForge — Vibe Code Your Way to Production",
   description:
     "Master vibe coding. AI-assisted development, prompt engineering, and full-stack building — ship faster with modern tools.",
   metadataBase: new URL("http://localhost:3000"),

@@ -11,7 +11,7 @@ export function CallToAction() {
       <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-10 text-center">
         <AnimatedSection className="flex flex-col items-center gap-6">
           <AnimatedItem>
-            <EyebrowBadge>DEVINI // READY?</EyebrowBadge>
+            <EyebrowBadge>VIBEFORGE // READY?</EyebrowBadge>
           </AnimatedItem>
           <AnimatedItem>
             <h2 className="max-w-[28ch] font-sans text-3xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">

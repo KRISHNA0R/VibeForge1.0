@@ -4,40 +4,65 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { EyebrowBadge } from "@/components/ui/EyebrowBadge";
 
-const achievements = [
-  { id: 1, label: "Hackathon Win", subtitle: "ZSI Regional Winner" },
-  { id: 2, label: "National Finalist", subtitle: "EIBS 2.0 IITKGP" },
-  { id: 3, label: "Student Launch", subtitle: "First Product Shipped" },
-  { id: 4, label: "Community", subtitle: "500+ Builders" },
-  { id: 5, label: "Workshop", subtitle: "Vibe Coding Bootcamp" },
-  { id: 6, label: "Collaboration", subtitle: "Open Source Contributions" },
-  { id: 7, label: "Recognition", subtitle: "Industry Partnership" },
-  { id: 8, label: "Growth", subtitle: "10x Student Results" },
+const allImages = [
+  { src: "/achievement-photos/1762160343307.jpg", portrait: false },
+  { src: "/achievement-photos/1762160344761.jpg", portrait: true },
+  { src: "/achievement-photos/1762160348004.jpg", portrait: true },
+  { src: "/achievement-photos/1762160417091.jpg", portrait: false },
+  { src: "/achievement-photos/1762160482978.jpg", portrait: false },
+  { src: "/achievement-photos/1762160531850.jpg", portrait: false },
+  { src: "/achievement-photos/1762489477929.jpg", portrait: false },
+  { src: "/achievement-photos/1762489477967.jpg", portrait: false },
+  { src: "/achievement-photos/1762489659228.jpg", portrait: false },
+  { src: "/achievement-photos/1770644193393.jpg", portrait: true },
+  { src: "/achievement-photos/1770834968916.jpg", portrait: true },
+  { src: "/achievement-photos/1774900702553.jpg", portrait: false },
+  { src: "/achievement-photos/1774900702718.jpg", portrait: false },
+  { src: "/achievement-photos/1782122517924.jpg", portrait: true },
+  { src: "/achievement-photos/1782207738856.jpg", portrait: false },
+  { src: "/achievement-photos/1782207738903.jpg", portrait: true },
+  { src: "/achievement-photos/1782207738963.jpg", portrait: false },
+  { src: "/achievement-photos/1782207738964.jpg", portrait: false },
+  { src: "/achievement-photos/1782207739044.jpg", portrait: true },
+  { src: "/achievement-photos/1782209145006.jpg", portrait: false },
+  { src: "/achievement-photos/1784976624010.jpg", portrait: true },
+  { src: "/achievement-photos/1785851120748.jpg", portrait: false },
+  { src: "/achievement-photos/1785851126220.jpg", portrait: false },
+  { src: "/achievement-photos/1785851127599.jpg", portrait: false },
+  { src: "/achievement-photos/1786427959778.jpg", portrait: false },
+  { src: "/achievement-photos/1786427959910.jpg", portrait: false },
+  { src: "/achievement-photos/1786427960100.jpg", portrait: false },
+  { src: "/achievement-photos/1786427964636.jpg", portrait: false },
+  { src: "/achievement-photos/1786427971083.jpg", portrait: false },
+  { src: "/achievement-photos/1786427971558.jpg", portrait: false },
+  { src: "/achievement-photos/1787040601079.jpg", portrait: false },
+  { src: "/achievement-photos/1787040601461.jpg", portrait: false },
+  { src: "/achievement-photos/1787040601669.jpg", portrait: false },
+  { src: "/achievement-photos/1787040601706.jpg", portrait: false },
+  { src: "/achievement-photos/1787040602177.jpg", portrait: false },
+  { src: "/achievement-photos/1788176063289.jpg", portrait: true },
+  { src: "/achievement-photos/1788176067539.jpg", portrait: true },
 ];
 
-function GalleryCard({ item }: { item: (typeof achievements)[0] }) {
+const row1 = allImages.slice(0, Math.ceil(allImages.length / 2));
+const row2 = allImages.slice(Math.ceil(allImages.length / 2));
+
+function GalleryCard({ item }: { item: typeof allImages[0] }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(212,162,47,0.4)" }}
-      className="group relative shrink-0 w-[260px] h-[180px] md:w-[320px] md:h-[220px] overflow-hidden rounded-2xl border border-white/8 bg-card-bg backdrop-blur-xl transition-all duration-300 hover:border-accent/30"
+      whileHover={{ scale: 1.02 }}
+      className={`group relative shrink-0 overflow-hidden rounded-2xl border-2 border-[#d4a22f] bg-card-bg backdrop-blur-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,162,47,0.4)] ${
+        item.portrait
+          ? "w-[260px] h-[380px] md:w-[300px] md:h-[440px]"
+          : "w-[380px] h-[260px] md:w-[460px] md:h-[300px]"
+      }`}
     >
       <img
-        src={`https://placehold.co/600x400/0a0a0b/d4a22f?text=${encodeURIComponent(item.label)}`}
-        alt={item.label}
-        className="h-full w-full object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-80"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-      <div className="absolute bottom-0 left-0 p-4 md:p-6">
-        <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent">
-          {item.subtitle}
-        </p>
-        <h3 className="font-sans text-lg font-semibold text-foreground mt-1">
-          {item.label}
-        </h3>
-      </div>
-      <div
-        className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"
-        style={{ boxShadow: "inset 0 0 40px rgba(212,162,47,0.15)" }}
+        src={item.src}
+        alt="Achievement"
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
     </motion.div>
   );
@@ -59,7 +84,7 @@ export function Gallery() {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="flex flex-col gap-6"
         >
-          <EyebrowBadge>DEVINI // HALL OF ACHIEVEMENTS</EyebrowBadge>
+          <EyebrowBadge>VIBEFORGE // HALL OF ACHIEVEMENTS</EyebrowBadge>
           <h2 className="max-w-[24ch] font-sans text-3xl font-semibold leading-[0.98] tracking-tighter text-foreground md:text-6xl">
             Built to <span className="text-accent">celebrate.</span>
           </h2>
@@ -70,49 +95,39 @@ export function Gallery() {
         </motion.div>
       </div>
 
-      {/* Marquee scroll */}
-      <div ref={containerRef} className="relative">
-        <div className="flex gap-6 px-6 md:px-10 animate-marquee hover:[animation-play-state:paused]">
-          {[...achievements, ...achievements].map((item, i) => (
-            <GalleryCard key={`${item.id}-${i}`} item={item} />
+      {/* Row 1 - moves left */}
+      <div ref={containerRef} className="relative mb-4">
+        <div className="flex gap-4 items-center px-6 md:px-10 animate-marquee hover:[animation-play-state:paused]">
+          {[...row1, ...row1].map((item, i) => (
+            <GalleryCard key={`r1-${i}`} item={item} />
           ))}
         </div>
       </div>
 
-      {/* Second row - reverse direction */}
-      <div className="relative mt-6">
-        <div className="flex gap-6 px-6 md:px-10 animate-marquee-reverse hover:[animation-play-state:paused]">
-          {[...achievements, ...achievements]
-            .reverse()
-            .map((item, i) => (
-              <GalleryCard key={`rev-${item.id}-${i}`} item={item} />
-            ))}
+      {/* Row 2 - moves right */}
+      <div className="relative">
+        <div className="flex gap-4 items-center px-6 md:px-10 animate-marquee-reverse hover:[animation-play-state:paused]">
+          {[...row2, ...row2].map((item, i) => (
+            <GalleryCard key={`r2-${i}`} item={item} />
+          ))}
         </div>
       </div>
 
       <style jsx>{`
         @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
         @keyframes marquee-reverse {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
         }
         .animate-marquee {
-          animation: marquee 30s linear infinite;
+          animation: marquee 80s linear infinite;
           width: max-content;
         }
         .animate-marquee-reverse {
-          animation: marquee-reverse 30s linear infinite;
+          animation: marquee-reverse 80s linear infinite;
           width: max-content;
         }
       `}</style>

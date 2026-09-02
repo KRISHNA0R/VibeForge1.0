@@ -93,6 +93,24 @@ export function CinematicReveal() {
     ctx.drawImage(img, drawX, drawY, drawW, drawH);
   }, []);
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+    };
+    const handleContextRestored = () => {
+      const idx = lastFrameRef.current >= 0 ? lastFrameRef.current : 0;
+      drawFrame(idx);
+    };
+    canvas.addEventListener("contextlost", handleContextLost);
+    canvas.addEventListener("contextrestored", handleContextRestored);
+    return () => {
+      canvas.removeEventListener("contextlost", handleContextLost);
+      canvas.removeEventListener("contextrestored", handleContextRestored);
+    };
+  }, [drawFrame]);
+
   const resizeCanvas = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -245,7 +263,7 @@ export function CinematicReveal() {
             </h2>
           </div>
           <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-zinc-400 md:text-base">
-            From zero to production. Devini held the frame so you could build from it &mdash; one vibe at a time.
+            From zero to production. VibeForge held the frame so you could build from it &mdash; one vibe at a time.
           </p>
         </div>
 
@@ -278,7 +296,7 @@ export function CinematicReveal() {
             />
           </div>
           <div className="mx-6 flex items-center justify-between pb-4 font-mono text-[10px] uppercase tracking-[0.28em] text-zinc-500 md:mx-10">
-            <span>DEVINI // LIVE</span>
+            <span>VIBEFORGE // LIVE</span>
             <span>AI ENGINE // ONLINE</span>
             <span>Scroll &darr;</span>
           </div>
