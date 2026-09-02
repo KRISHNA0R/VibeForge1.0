@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 export function Footer() {
@@ -10,9 +11,12 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-start">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.32em] text-foreground">
-              <span
-                aria-hidden
-                className="inline-block h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(212,162,47,0.9)]"
+              <Image
+                src="/logo.jpg"
+                alt="VibeForge"
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-full object-cover ring-1 ring-white/15"
               />
               VibeForge
             </div>

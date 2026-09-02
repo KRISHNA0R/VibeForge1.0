@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description:
     "Master vibe coding. AI-assisted development, prompt engineering, and full-stack building — ship faster with modern tools.",
   metadataBase: new URL("http://localhost:3000"),
+  icons: {
+    icon: [{ url: "/logo.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/logo.jpg", type: "image/jpeg" }],
+  },
 };
 
 export default function RootLayout({

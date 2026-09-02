@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react";
@@ -47,9 +48,13 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.32em] text-foreground"
         >
-          <span
-            aria-hidden
-            className="inline-block h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(212,162,47,0.9)]"
+          <Image
+            src="/logo.jpg"
+            alt="VibeForge"
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-full object-cover ring-1 ring-white/15"
+            priority
           />
           VibeForge
         </Link>
