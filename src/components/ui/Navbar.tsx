@@ -34,8 +34,9 @@ export function Navbar() {
   ];
 
   return (
+    <>
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-[background-color,backdrop-filter,border-color] duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-300 ${
         scrolled
           ? "border-b border-white/10 bg-black/60 backdrop-blur-2xl backdrop-saturate-150"
           : "border-b border-transparent bg-transparent"
@@ -109,9 +110,13 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
+    </header>
+
+      {/* Mobile menu overlay — kept as a sibling of <header>: the header's
+          backdrop-blur creates a containing block, so a fixed overlay nested
+          inside it would anchor to the header instead of the viewport. */}
       <div
-        className={`fixed inset-0 top-[60px] z-50 bg-black/95 backdrop-blur-2xl transition-all duration-300 md:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-[60px] z-40 overflow-y-auto bg-black/95 backdrop-blur-2xl transition-all duration-300 md:hidden ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -144,6 +149,6 @@ export function Navbar() {
           </a>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

@@ -53,8 +53,8 @@ function GalleryCard({ item }: { item: typeof allImages[0] }) {
       whileHover={{ scale: 1.02 }}
       className={`group relative shrink-0 overflow-hidden rounded-2xl border-2 border-[#d4a22f] bg-card-bg backdrop-blur-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,162,47,0.4)] ${
         item.portrait
-          ? "w-[260px] h-[380px] md:w-[300px] md:h-[440px]"
-          : "w-[380px] h-[260px] md:w-[460px] md:h-[300px]"
+          ? "w-[240px] h-[340px] sm:w-[260px] sm:h-[380px] md:w-[300px] md:h-[440px]"
+          : "w-[300px] h-[200px] sm:w-[340px] sm:h-[230px] md:w-[460px] md:h-[300px]"
       }`}
     >
       <img

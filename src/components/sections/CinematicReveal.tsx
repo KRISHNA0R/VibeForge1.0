@@ -316,8 +316,10 @@ export function CinematicReveal() {
               className={`pointer-events-none absolute ${position} z-20 hidden w-[420px] max-w-[90vw] md:block`}
             >
               <figure
-                className={`card-surface pointer-events-auto p-6 transition-all duration-400 ease-out ${
-                  visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+                className={`card-surface col-start-1 row-start-1 p-6 transition-all duration-400 ease-out ${
+                  visible
+                    ? "pointer-events-auto translate-y-0 opacity-100"
+                    : "pointer-events-none translate-y-5 opacity-0"
                 }`}
               >
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
@@ -337,14 +339,16 @@ export function CinematicReveal() {
           );
         })}
 
-        <div className="pointer-events-none absolute inset-x-0 top-[36%] z-20 flex flex-col gap-3 px-6 md:hidden">
+        <div className="pointer-events-none absolute inset-x-0 top-[32%] z-20 grid gap-3 px-6 md:hidden">
           {BEATS.map((b) => {
             const visible = visibleBeats.has(b.id);
             return (
               <figure
                 key={b.id}
-                className={`card-surface pointer-events-auto p-5 transition-all duration-400 ease-out ${
-                  visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                className={`card-surface col-start-1 row-start-1 p-5 transition-all duration-400 ease-out ${
+                  visible
+                    ? "pointer-events-auto translate-y-0 opacity-100"
+                    : "pointer-events-none translate-y-4 opacity-0"
                 }`}
               >
                 <span className="font-mono text-[9px] uppercase tracking-[0.28em] text-accent">
