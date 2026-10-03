@@ -373,7 +373,7 @@ export function CinematicReveal() {
             Ready to ship?
           </span>
           <a
-            href="#systems"
+            href="/pricing"
             className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-foreground backdrop-blur-md transition-all duration-200 hover:bg-white/[0.12] active:translate-y-[1px]"
           >
             View plans

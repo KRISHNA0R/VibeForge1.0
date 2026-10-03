@@ -20,8 +20,8 @@ export const BEATS: Beat[] = [
     hide: 0.3,
     label: "01 — Prototype",
     quote: "Move fast and break things.",
-    speaker: "Mark Zuckerberg",
-    film: "FACEBOOK — 2012",
+    speaker: "Vijay Shekhar Sharma",
+    film: "PAYTM — 2010",
   },
   {
     id: "b2",
@@ -29,8 +29,8 @@ export const BEATS: Beat[] = [
     hide: 0.55,
     label: "02 — Ship It",
     quote: "The best code is no code at all.",
-    speaker: "Jeff Atwood",
-    film: "STACK OVERFLOW — 2008",
+    speaker: "Nandan Nilekani",
+    film: "AADHAAR — 2009",
   },
   {
     id: "b3",
@@ -38,8 +38,8 @@ export const BEATS: Beat[] = [
     hide: 0.8,
     label: "03 — Scale",
     quote: "Simplicity is the ultimate sophistication.",
-    speaker: "Leonardo da Vinci",
-    film: "DESIGN PRINCIPLE",
+    speaker: "Dr. A.P.J. Abdul Kalam",
+    film: "WINGS OF FIRE",
   },
 ];
 

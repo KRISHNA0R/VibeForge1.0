@@ -37,7 +37,9 @@ export function PlanCard({ name, price, period, description, features, popular }
           </li>
         ))}
       </ul>
-      <a href="#cta"
+      <a href="https://forms.gle/iucekNz4FdBvUK8M7"
+        target="_blank"
+        rel="noopener noreferrer"
         className="group mt-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 py-3 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-foreground backdrop-blur-md transition-all duration-200 hover:bg-white/[0.1] active:translate-y-[1px]">
         Get Started
         <ArrowUpRight size={14} weight="bold"

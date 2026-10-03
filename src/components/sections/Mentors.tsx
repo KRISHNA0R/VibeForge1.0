@@ -185,7 +185,7 @@ function MentorCard({ mentor, index }: { mentor: typeof mentors[0]; index: numbe
               <ArrowUpRight size={12} weight="bold" />
             </a>
           )}
-          {mentor.social.instagram && (
+          {mentor.social.instagram && mentor.social.instagram !== "#" && (
             <a
               href={mentor.social.instagram}
               className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground backdrop-blur-md transition-all duration-300 hover:border-accent/40 hover:bg-accent/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"

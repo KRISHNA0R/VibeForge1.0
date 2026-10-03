@@ -26,13 +26,11 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const navLinks = [
-    { href: "#skills", label: "Skills" },
-    { href: "#tools", label: "Tools" },
     { href: "/gallery", label: "Gallery" },
     { href: "/mentors", label: "Mentors" },
     { href: "/testimonials", label: "Testimonials" },
     { href: "/pricing", label: "Pricing" },
-    { href: "#cta", label: "Contact" },
+    { href: "https://wa.me/919073347571?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20course", label: "Contact" },
   ];
 
   return (
@@ -64,6 +62,8 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="font-mono text-[11px] uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"
             >
               {link.label}
@@ -122,6 +122,8 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
               onClick={() => setMobileOpen(false)}
               className="font-mono text-sm uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-foreground"
             >

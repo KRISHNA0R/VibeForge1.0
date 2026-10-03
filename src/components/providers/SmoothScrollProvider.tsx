@@ -10,11 +10,13 @@ export function SmoothScrollProvider({ children }: Props) {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.2,
+      lerp: 0.16,
+      duration: 0.8,
+      wheelMultiplier: 1.25,
+      touchMultiplier: 1.4,
       smoothWheel: true,
-      syncTouch: false,
-      touchMultiplier: 1.1,
+      syncTouch: true,
+      anchors: true,
     });
     lenisRef.current = lenis;
 

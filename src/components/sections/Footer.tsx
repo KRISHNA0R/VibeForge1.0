@@ -27,14 +27,15 @@ export function Footer() {
 
           <nav className="grid grid-cols-2 gap-x-10 gap-y-3 md:grid-cols-3">
             {[
-              ["Prompt Engineering", "Master AI prompts", "#skills"],
-              ["Full-Stack Apps", "Next.js + React", "#skills"],
-              ["AI Workflows", "Automate with AI", "#tools"],
-              ["Deployment", "Ship to production", "#tools"],
-              ["System Design", "Architecture patterns", "/pricing"],
-              ["Vibe Coding", "The VibeForge method", "/pricing"],
+              ["Gallery", "Student achievements", "/gallery"],
+              ["Mentors", "Meet your mentors", "/mentors"],
+              ["Reviews", "Student voices", "/testimonials"],
+              ["Pricing", "Pick your plan", "/pricing"],
+              ["Contact", "Chat on WhatsApp", "https://wa.me/919073347571?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20course"],
             ].map(([name, note, href]) => (
               <a key={name} href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="group flex flex-col gap-1">
                 <span className="font-sans text-[13px] font-medium text-foreground transition-colors group-hover:text-accent">
                   {name}

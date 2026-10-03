@@ -10,14 +10,14 @@ const testimonials = [
     name: "Arjun Sharma",
     location: "Delhi",
     quote: "The prompt bible alone saved me hours every week. Went from struggling with features to shipping in 20 minutes.",
-    rating: 4,
+    rating: 5,
     avatar: "https://placehold.co/80x80/0a0a0b/d4a22f?text=AS",
   },
   {
     name: "Priya Nair",
     location: "Bangalore",
     quote: "Notion templates changed how I organize my entire workflow. Quality is top-notch, use them daily.",
-    rating: 3,
+    rating: 4,
     avatar: "https://placehold.co/80x80/0a0a0b/d4a22f?text=PN",
   },
   {
@@ -30,8 +30,8 @@ const testimonials = [
   {
     name: "Sneha Kulkarni",
     location: "Pune",
-    quote: "1:1 session fixed my project that was stuck for 2 weeks. Same day fix. Krishna properly knows his craft.",
-    rating: 3,
+    quote: "1:1 session fixed my project that was stuck for 2 weeks. Same day fix. Krishna really knows his craft.",
+    rating: 5,
     avatar: "https://placehold.co/80x80/0a0a0b/d4a22f?text=SK",
   },
   {

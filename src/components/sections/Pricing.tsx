@@ -8,30 +8,33 @@ import { PlanCard } from "@/components/ui/PlanCard";
 const plans = [
   {
     name: "Starter",
-    priceINR: "Free",
-    priceUSD: "Free",
-    period: "forever",
-    description: "Get your feet wet with vibe coding fundamentals.",
+    priceINR: "₹599",
+    priceUSD: "$7",
+    period: "/month",
+    description: "Beginner to advanced vibecoding in group with full guidance.",
     features: [
-      "3 beginner courses",
-      "Prompt engineering basics",
-      "Community access",
-      "Email support",
+      "3 group courses (beginner to advanced)",
+      "Short vibecoding course + full guidance",
+      "24x7 support for 1 month",
+      "22 secret UI/UX links",
+      "Vibecoding secret bible PDF",
     ],
   },
   {
     name: "Builder",
     priceINR: "₹1,499",
     priceUSD: "$29",
-    period: "/month",
+    period: "",
     description: "Full access to the VibeForge method and all tools.",
     features: [
+      "Everything in Starter pack",
       "All courses (20+)",
       "AI-assisted coding deep dives",
       "Full-stack project templates",
       "Deployment workflows",
       "Priority support",
-      "Monthly live sessions",
+      "5 group sessions",
+      "Hackathon guidance till grand finals",
     ],
     popular: true,
   },
@@ -43,10 +46,11 @@ const plans = [
     description: "Scale your team with vibe coding training.",
     features: [
       "Everything in Builder",
-      "Team licenses (up to 10)",
+      "7 vibe coding sessions (beginner to advanced)",
+      "Full hackathon guidance till end of hackathon",
+      "24x7 personal support",
       "Custom curriculum",
       "1-on-1 coaching calls",
-      "Slack/Discord private channel",
       "Early access to new courses",
     ],
   },
@@ -72,7 +76,7 @@ export function Pricing() {
             <span className="text-accent">build speed.</span>
           </h2>
           <p className="max-w-[48ch] font-sans text-base leading-relaxed text-zinc-400 md:text-lg">
-            Start free. Upgrade when you are ready to ship. Cancel anytime.
+            Pick a plan, get mentored, and ship faster. Cancel anytime.
           </p>
 
           {/* Currency Toggle */}
